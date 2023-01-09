@@ -6,6 +6,7 @@ class Photographer {
     this._tagline = data.tagline;
     this._price = data.price;
     this._portrait = data.portrait;
+    this._id = data.id;
   }
 
   get name() {
@@ -30,5 +31,9 @@ class Photographer {
 
   get portrait() {
     return `/assets/photographers/${this._portrait}`;
+  }
+
+  get id() {
+    return this._id;
   }
 }
