@@ -4,8 +4,8 @@ let str = window.location.href;
 let url = new URL(str);
 let idPhotographer = url.searchParams.get("id");
 
-const photographerHeader = document.querySelector(".profil_section");
-const photographerMedia = document.querySelector(".media_section");
+const photographerHeader = document.querySelector(".profil-section");
+const photographerMedia = document.querySelector(".mediaSection");
 
 async function getPhotograph() {
   const { photographers, media } = await getPhotographers();
@@ -14,20 +14,24 @@ async function getPhotograph() {
   const Template = new photographerProfil(photographe);
   photographerHeader.appendChild(Template.createPhotographerProfil());
 
-  const imageMedia = media.map(
-    (media) => new ImageVideoFactory(media, "Image")
-  );
-  console.log(imageMedia);
+  // const imageMedia = media.map(
+  //   (media) => new ImageVideoFactory(media, "Image")
+  // );
+  // console.log(imageMedia);
 
-  const videoMedia = media.map(
-    (media) => new ImageVideoFactory(media, "Video")
-  );
-  console.log(videoMedia);
+  // const videoMedia = media.map(
+  //   (media) => new ImageVideoFactory(media, "Video")
+  // );
+  // console.log(videoMedia);
 
-  const AllMedia = imageMedia.concat(videoMedia);
-  const PhotographerMedias = AllMedia.filter(
+  // const AllMedia = imageMedia.concat(videoMedia);
+  const PhotographerMedias = media.filter(
     (p) => p.photographerId === +idPhotographer
   );
+  console.log(PhotographerMedias);
+
+  const Filter = new FilterForm(PhotographerMedias);
+  Filter.render();
 
   PhotographerMedias.forEach((media) => {
     const TemplateArt = new PhotographerArt(media);
