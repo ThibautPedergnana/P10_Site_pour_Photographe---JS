@@ -6,12 +6,19 @@ class PhotographerArt {
   createPhotographerArt() {
     const sectionArt = document.createElement("article");
     sectionArt.setAttribute("class", "photograph-art");
-
     const photographerArt = `
       <div class="media-container">
-        <img 
-          alt="${this._media.title}"
-          src="/assets/medias/${this._media.image}"/>
+      ${
+        this._media?._image
+          ? `<img 
+            alt="${this._media.title}"
+            src="/assets/medias/${this._media?._image}"/>`
+          : `<video controls width="346px" height="220px">
+            <source src="/assets/medias/${this._media?._video}"
+            type="video/webm">
+          </video>`
+      }
+       
         </div>
       <div class="media-description">
         <h2 class="title">${this._media.title}</h2>

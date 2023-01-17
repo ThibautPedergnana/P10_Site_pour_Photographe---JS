@@ -7,13 +7,13 @@ class FilterForm {
     this.$mediaSection = document.querySelector(".mediaSection");
   }
 
-  async filterMedia(likes) {
+  async filterMedia(label) {
     this.clearMediaWrapper();
 
-    const FilterLib = new FilterLikes(this.media, likes);
-    const FilteredMedia = await FilterLib.filterByLikes();
+    const filterAdapter = new FilterMediaAdapter(this.media, label);
+    const filteredMedia = await filterAdapter.filterMedias();
 
-    FilteredMedia.forEach((media) => {
+    filteredMedia.forEach((media) => {
       const Template = new PhotographerArt(media);
       this.$mediaSection.appendChild(Template.createPhotographerArt());
     });
@@ -21,8 +21,8 @@ class FilterForm {
 
   onChangeFilter() {
     this.$wrapper.querySelector("form").addEventListener("change", (e) => {
-      const likes = e.target.value;
-      this.filterMedia(likes);
+      const label = e.target.value;
+      this.filterMedia(label);
     });
   }
 

@@ -1,5 +1,3 @@
-//Mettre le code JavaScript lié à la page photographer.html
-
 let str = window.location.href;
 let url = new URL(str);
 let idPhotographer = url.searchParams.get("id");
@@ -14,26 +12,15 @@ async function getPhotograph() {
   const Template = new photographerProfil(photographe);
   photographerHeader.appendChild(Template.createPhotographerProfil());
 
-  // const imageMedia = media.map(
-  //   (media) => new ImageVideoFactory(media, "Image")
-  // );
-  // console.log(imageMedia);
+  const medias = media.map((media) => new MediaFactory(media));
 
-  // const videoMedia = media.map(
-  //   (media) => new ImageVideoFactory(media, "Video")
-  // );
-  // console.log(videoMedia);
-
-  // const AllMedia = imageMedia.concat(videoMedia);
-  const PhotographerMedias = media.filter(
+  const PhotographerMedias = medias.filter(
     (p) => p.photographerId === +idPhotographer
   );
-  console.log(PhotographerMedias);
-
   const Filter = new FilterForm(PhotographerMedias);
   Filter.render();
 
-  PhotographerMedias.forEach((media) => {
+  PhotographerMedias.forEach((media, i) => {
     const TemplateArt = new PhotographerArt(media);
     photographerMedia.appendChild(TemplateArt.createPhotographerArt());
   });
