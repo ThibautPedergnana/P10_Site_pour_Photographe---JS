@@ -3,6 +3,7 @@ class FilterForm {
     this.media = media;
 
     this.$wrapper = document.createElement("div");
+    this.$wrapper.classList.add("filterForm");
     this.$filterFormWrapper = document.querySelector(".filter-form-wrapper");
     this.$mediaSection = document.querySelector(".mediaSection");
   }
@@ -35,7 +36,6 @@ class FilterForm {
         <form class="filter-form" action="#" method="POST">
             <label for="filter-select">Trier par</label>
             <select name="filter-select" id="filter-select">
-                <option value="">Aucun filtre</option>
                 <option value="likes">Popularité</option>
                 <option value="date">Date</option>
                 <option value="title">Titre</option>

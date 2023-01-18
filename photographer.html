@@ -21,24 +21,35 @@
   </main>
   <div id="contact_modal">
     <div class="modal">
-      <header>
-        <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" />
-      </header>
-      <form>
-        <div>
-          <label>Prénom</label>
-          <input />
-        </div>
-        <button class="contact_button">Envoyer</button>
-      </form>
+      <div class="content">
+        <header>
+          <h2>Contactez-moi</h2>
+          <img src="assets/icons/close.svg" onclick="closeModal()" />
+        </header>
+        <form>
+          <div>
+            <label>Prénom</label>
+            <input />
+          </div>
+          <div>
+            <label>Nom</label>
+            <input />
+          </div>
+          <div>
+            <label>Email</label>
+            <input />
+          </div>
+          <div>
+            <label>Votre message</label>
+            <input />
+          </div>
+          <button class="contact_button">Envoyer</button>
+        </form>
+      </div>
     </div>
   </div>
   <!-- Service -->
   <script src="/scripts/utils/datas.js"></script>
-
-  <!-- Lib -->
-  <script src="/lib/FilterLikes/index.js"></script>
 
   <!-- Entry point -->
   <script src="/scripts/pages/photographer.js"></script>
@@ -49,20 +60,20 @@
   <script src="/scripts/templates/FilterForm.js"></script>
 
   <!-- Models -->
-  <script src="scripts/models/Photographers.js"></script>
-  <script src="scripts/models/Image.js"></script>
-  <script src="scripts/models/Video.js"></script>
+  <script src="/scripts/models/Photographers.js"></script>
+  <script src="/scripts/models/Image.js"></script>
+  <script src="/scripts/models/Video.js"></script>
 
   <!-- Filters -->
-  <script src="lib/FilterLike/FilterLike.js"></script>
-  <script src="lib/FilterDate/FilterDate.js"></script>
-  <script src="lib/FilterTitle/FilterTitle.js"></script>
+  <script src="/lib/FilterLike/FilterLike.js"></script>
+  <script src="/lib/FilterDate/FilterDate.js"></script>
+  <script src="/lib/FilterTitle/FilterTitle.js"></script>
 
   <!-- Adapters -->
-  <script src="scripts/adapters/FilterMediaAdapter.js"></script>
+  <script src="/scripts/adapters/FilterMediaAdapter.js"></script>
 
   <!-- Factory -->
-  <script src="scripts/factories/MediaFactory.js"></script>
+  <script src="/scripts/factories/MediaFactory.js"></script>
 
   <!-- Modal -->
   <script src="/scripts/utils/contactForm.js"></script>

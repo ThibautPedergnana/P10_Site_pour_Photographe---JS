@@ -66,10 +66,11 @@ a:focus {
   justify-content: center;
   align-items: center;
 }
+
 .location {
   font-size: 19px;
-  color: #d3573c;
-  margin: 0 0 5px 0;
+  color: #901c1c;
+  margin: 10px 0;
   text-align: center;
 }
 

@@ -8,12 +8,10 @@ class FilterMediaAdapter {
     switch (this.label) {
       case "likes":
         return await FilterLike.filterByLikes(this.medias);
-      // case "date":
-      //   await FilterV2.filterByActor(this.medias);
-      //   break;
-      // case "title":
-      //   await FilterV2.filterByActor(this.medias);
-      //   break;
+      case "date":
+        await FilterDate.filterByDate(this.medias);
+      case "title":
+        return await FilterTitle.filterByTitle(this.medias);
     }
   }
 }
