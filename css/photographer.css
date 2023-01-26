@@ -183,10 +183,8 @@ form input {
 .likes {
   display: flex;
   align-items: center;
-}
-
-.likes {
   color: #000;
+  cursor: pointer;
 }
 
 .likes:hover {
@@ -203,4 +201,54 @@ form input {
 
 .likes span {
   margin: 0.2em;
+}
+
+.infos {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-wrap: wrap;
+  background-color: #d3573c;
+  margin-right: 50px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 20%;
+  padding: 15px 25px;
+  font-weight: bold;
+  border-radius: 5px 5px 0 0;
+}
+
+.player-modal {
+  display: none;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgba(26, 39, 156, 0.4);
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+.player-modal-on {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-buttons {
+  display: flex;
+  margin-top: 25px;
+  gap: 25px;
+}
+
+.player img {
+  width: fit-content;
 }

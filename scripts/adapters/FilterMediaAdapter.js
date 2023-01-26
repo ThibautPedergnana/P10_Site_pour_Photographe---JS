@@ -9,7 +9,7 @@ class FilterMediaAdapter {
       case "likes":
         return await FilterLike.filterByLikes(this.medias);
       case "date":
-        await FilterDate.filterByDate(this.medias);
+        return await FilterDate.filterByDate(this.medias);
       case "title":
         return await FilterTitle.filterByTitle(this.medias);
     }

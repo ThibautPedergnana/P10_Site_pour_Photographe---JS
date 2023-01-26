@@ -18,7 +18,18 @@
     <section class="profil-section"></section>
     <div class="filter-form-wrapper"></div>
     <section class="mediaSection"></section>
+    <section class="infos">
+      <div class="total-likes">
+        <span class="heart"></span>
+      </div>
+      <div class="price">
+      </div>
+    </section>
   </main>
+  <div class="player-modal">
+    <!-- <div class="modal"></div> -->
+
+  </div>
   <div id="contact_modal">
     <div class="modal">
       <div class="content">
@@ -54,10 +65,14 @@
   <!-- Entry point -->
   <script src="/scripts/pages/photographer.js"></script>
 
+  <!-- DecoratorsphotographerArtWithPlayer.jsphotographerArtWithPlayer.js -->
+  <script src="/scripts/decorators/photographerArtWithPlayer.js"></script>
+
   <!-- Template -->
   <script src="/scripts/templates/PhotographerProfil.js"></script>
   <script src="/scripts/templates/PhotographerArt.js"></script>
   <script src="/scripts/templates/FilterForm.js"></script>
+  <script src="/scripts/templates/PlayerModal.js"></script>
 
   <!-- Models -->
   <script src="/scripts/models/Photographers.js"></script>
@@ -65,9 +80,9 @@
   <script src="/scripts/models/Video.js"></script>
 
   <!-- Filters -->
-  <script src="/lib/FilterLike/FilterLike.js"></script>
-  <script src="/lib/FilterDate/FilterDate.js"></script>
-  <script src="/lib/FilterTitle/FilterTitle.js"></script>
+  <script src="/lib/Filter/FilterLike.js"></script>
+  <script src="/lib/Filter/FilterDate.js"></script>
+  <script src="/lib/Filter/FilterTitle.js"></script>
 
   <!-- Adapters -->
   <script src="/scripts/adapters/FilterMediaAdapter.js"></script>
@@ -78,6 +93,10 @@
   <!-- Modal -->
   <script src="/scripts/utils/contactForm.js"></script>
   <script src="https://kit.fontawesome.com/896c4dd15d.js" crossorigin="anonymous"></script>
+
+  <!-- Like -->
+  <script src="/scripts/Like/LikeCounter.js"></script>
+  <script src="/scripts/Like/LikeSubject.js"></script>
 </body>
 
 </html>
