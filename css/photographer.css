@@ -236,19 +236,41 @@ form input {
   justify-content: center;
   align-items: center;
 }
+
+.player-wrapper {
+  background-color: #fafafa;
+  border-radius: 5px;
+  padding: 15px;
+}
+
 .player {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
+  position: relative;
 }
 
-.container-buttons {
-  display: flex;
-  margin-top: 25px;
-  gap: 25px;
+.player img,
+video {
+  max-width: 800px;
+  max-height: 600px;
+  object-fit: contain;
+  box-shadow: 5px 1px 10px #525252;
+  border-radius: 5px;
 }
 
-.player img {
-  width: fit-content;
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.media-title {
+  color: #901c1c;
+  margin: 10px 0 0 80px;
+}
+
+.media-title span {
+  font-size: 17px;
 }

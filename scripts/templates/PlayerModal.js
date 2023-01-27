@@ -52,22 +52,23 @@ class PlayerModal {
   createPlayer() {
     const player = `
         <div class="player">
-          <iframe 
-            height="600"
-            width="800"
+            <button class="prev-btn-player"><i class="fa-solid fa-chevron-left"></i></button>
             ${
               this.media?._image
                 ? `<img 
                   alt="${this.media._title}"
                   src="/assets/medias/${this.media?._image}"/>`
-                : `src="/assets/medias/${this.media?._video}"`
-            }>
-          </iframe>
-          <div class="container-buttons">
-            <button class="prev-btn-player">Précedent</button>
-            <button class="close-btn-player">Fermer la fenêtre</button>
-            <button class="next-btn-player">Suivant</button>
-          </div>
+                : `<video controls>
+                      <source src="/assets/medias/${this.media?._video}">
+                   </video>`
+            }
+            <button class="next-btn-player"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="close">
+              <button class="close-btn-player">Fermer la fenêtre</button>
+            </div>
+        </div>
+        <div class="media-title">
+            <span>${this.media._title}</span>
         </div>
       `;
 
