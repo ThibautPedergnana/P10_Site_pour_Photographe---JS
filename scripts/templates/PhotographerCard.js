@@ -5,6 +5,7 @@ class PhotographerCard {
 
   createPhotographerCard() {
     const article = document.createElement("article");
+    article.classList.add("photographer-card");
 
     const photographerCard = `
       <a href="photographer.html?id=${this._photographer._id}">

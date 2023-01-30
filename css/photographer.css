@@ -187,16 +187,14 @@ form input {
   cursor: pointer;
 }
 
-.likes:hover {
-  color: #901c1c;
-}
-
-.likes:active {
-  color: #901c1c;
-}
-
-.likes:focus {
-  color: #901c1c;
+.fa-regular:hover,
+.fa-regular:active,
+.fa-regular:focus {
+  transition: all 0.5s ease-out;
+  background: linear-gradient(to left, #901c1c, #d3573c);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
 }
 
 .likes span {
@@ -258,6 +256,18 @@ video {
   object-fit: contain;
   box-shadow: 5px 1px 10px #525252;
   border-radius: 5px;
+  margin: 15px;
+}
+
+.player button {
+  background-color: #fafafa;
+  border: none;
+  color: #901c1c;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 28px;
 }
 
 .close {

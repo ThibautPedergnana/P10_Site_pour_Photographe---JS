@@ -4,7 +4,7 @@ let idPhotographer = url.searchParams.get("id");
 
 const photographerHeader = document.querySelector(".profil-section");
 const photographerMedia = document.querySelector(".mediaSection");
-const totalLikes = document.querySelector(".total-likes");
+const totalLikes = document.querySelector(".total-likes-nb");
 
 function calculTotalLike() {
   let likes = document.querySelectorAll("[class^='nb-like-']");
@@ -30,10 +30,10 @@ async function getPhotograph() {
   // Parcours les medias via la factory
   const medias = media.map((media) => new MediaFactory(media));
 
-  // Applique le filtre sur les medias du photographe sélectionné
   const PhotographerMedias = medias.filter(
     (p) => p.photographerId === +idPhotographer
   );
+  // Applique le filtre sur les medias du photographe sélectionné
   const Filter = new FilterForm(PhotographerMedias);
   Filter.render();
 

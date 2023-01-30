@@ -20,6 +20,7 @@ class PlayerModal {
       .addEventListener("click", () => {
         this.$modalWrapper.classList.remove("player-modal-on");
         this.$wrapper.innerHTML = "";
+        this.$wrapper.remove();
       });
   }
 
@@ -64,7 +65,7 @@ class PlayerModal {
             }
             <button class="next-btn-player"><i class="fa-solid fa-chevron-right"></i></button>
             <div class="close">
-              <button class="close-btn-player">Fermer la fenêtre</button>
+              <button class="close-btn-player"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
         <div class="media-title">
