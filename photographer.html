@@ -34,24 +34,31 @@
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-        <form>
-          <div>
-            <label>Prénom</label>
-            <input />
+        <div class="success-message" hidden>
+          <p class="submitted">Votre message a bien été envoyé.</p>
+        </div>
+        <form class="form" name="form" action="photographer.html" method="get">
+          <div class="formData firstName-section">
+            <label for="firstName">Prénom</label>
+            <input class="text-control" type="text" id="firstName" name="firstName" />
+            <p id="firstNameErrorMsg" class="errorMsg"></p>
           </div>
-          <div>
-            <label>Nom</label>
-            <input />
+          <div class="formData lastName-section">
+            <label for="lastName">Nom</label>
+            <input class="text-control" type="text" id="lastName" name="lastName" />
+            <p id="lastNameErrorMsg" class="errorMsg"></p>
           </div>
-          <div>
-            <label>Email</label>
-            <input />
+          <div class="formData email-section">
+            <label for="email">Email</label>
+            <input class="text-control" type="email" id="email" name="email" />
+            <p id="emailErrorMsg" class="errorMsg"></p>
           </div>
-          <div>
-            <label>Votre message</label>
-            <input />
+          <div class="formData message-section">
+            <label for="message">Votre message</label>
+            <input class="text-control" type="text" id="message" name="message" />
+            <p id="messageErrorMsg" class="errorMsg"></p>
           </div>
-          <button class="contact_button">Envoyer</button>
+          <button class="submit-button">Envoyer</button>
         </form>
       </div>
     </div>

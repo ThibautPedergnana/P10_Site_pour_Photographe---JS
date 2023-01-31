@@ -197,6 +197,13 @@ form input {
   font-weight: bold;
 }
 
+.wished .fa-heart {
+  background: linear-gradient(to left, #901c1c, #d3573c);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
 .likes span {
   margin: 0.2em;
 }

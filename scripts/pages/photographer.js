@@ -45,8 +45,10 @@ async function getPhotograph() {
     );
     photographerMedia.appendChild(TemplateArt.createPhotographerArt());
   });
+
   calculTotalLike();
   getPrice(photographe.price);
+
   // Gère le total des likes depuis le DOM
   const likeElems = document.querySelectorAll("[class^='nb-like-']");
 
