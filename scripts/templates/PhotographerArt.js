@@ -43,7 +43,7 @@ class PhotographerArt {
         <h2 class="title">${this._media.title}</h2>
         <div class="likes">
           <span class="nb-like-${this._media.id}">${this._media.likes}</span>
-          <span class="heart"><i class="fa-regular fa-heart"></i></span>
+          <i class="fa-regular fa-heart heart" aria-label="likes"></i>
         </div>
       </div>
       `;

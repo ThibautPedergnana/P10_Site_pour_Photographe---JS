@@ -8,7 +8,9 @@ class PhotographerCard {
     article.classList.add("photographer-card");
 
     const photographerCard = `
-      <a href="photographer.html?id=${this._photographer._id}">
+      <a aria-describedby=”profil photographe” href="photographer.html?id=${
+        this._photographer._id
+      }">
         <div class="photographer-portrait">
          <img 
             alt="${this._photographer.name}"

@@ -16,7 +16,7 @@ class photographerProfil {
       <p class="tagline">${this._photographer.tagline}</p>
     </div>
     <div class="contact">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact_button" type="button" value="Contact Me" onclick="displayModal()" >Contactez-moi</button>
     </div>
     <div class="portrait">
       <img 

@@ -5,6 +5,7 @@ let idPhotographer = url.searchParams.get("id");
 const photographerHeader = document.querySelector(".profil-section");
 const photographerMedia = document.querySelector(".mediaSection");
 const totalLikes = document.querySelector(".total-likes-nb");
+const contactModal = document.querySelector(".modal");
 
 function calculTotalLike() {
   let likes = document.querySelectorAll("[class^='nb-like-']");
@@ -83,6 +84,9 @@ async function getPhotograph() {
   // Applique le filtre sur les medias du photographe sélectionné
   const Filter = new FilterForm(PhotographerMedias);
   Filter.render();
+
+  const Contact = new ContactForm(photographe);
+  contactModal.appendChild(Contact.createContactForm());
 
   // Affiche les medias du photographe sélectionné
   PhotographerMedias.forEach((media) => {

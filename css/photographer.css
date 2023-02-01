@@ -1,5 +1,4 @@
 #contact_modal {
-  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
@@ -8,6 +7,7 @@
   width: 100%;
   overflow: auto;
   background-color: rgba(26, 39, 156, 0.4);
+  display: none;
 }
 
 .photograph-header {
@@ -88,29 +88,30 @@
 }
 
 .modal header h2 {
-  font-size: 64px;
+  font-size: 40px;
   font-weight: normal;
   text-align: center;
+  margin: 5px;
 }
 
-form {
+.content form {
   display: flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
+  margin-top: 25px;
 }
 
-form label {
+.content form label {
   color: #312e2e;
-  font-size: 36px;
+  font-size: 32px;
 }
 
-.formData {
+.content .formData {
   display: flex;
   flex-direction: column;
   width: 100%;
   align-items: self-start;
-  margin-bottom: 26px;
 }
 
 form input {
@@ -118,6 +119,13 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+}
+
+.content .message-section textarea {
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  height: 160px;
 }
 
 .mediaSection {
@@ -129,7 +137,7 @@ form input {
 
 .filter-form-wrapper {
   display: flex;
-  margin: 0 100px;
+  margin: 10px 100px;
 }
 
 .photograph-art img {
@@ -157,18 +165,17 @@ form input {
   cursor: pointer;
 }
 
-.fa-regular:hover,
 .fa-regular:active,
 .fa-regular:focus {
   transition: all 0.5s ease-out;
-  background: linear-gradient(to left, #901c1c, #d3573c);
+  background: linear-gradient(to left, #901c1c, #901c1c);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
 }
 
 .wished .fa-heart {
-  background: linear-gradient(to left, #901c1c, #d3573c);
+  background: linear-gradient(to left, #901c1c, #901c1c);
   -webkit-background-clip: text;
   color: transparent;
   font-weight: bold;
@@ -226,7 +233,16 @@ form input {
   position: relative;
 }
 
-.player img,
+.media-container video {
+  min-width: 338px;
+  min-height: 220px;
+  object-fit: contain;
+  box-shadow: none;
+  border-radius: 0;
+  margin: 0;
+}
+
+.player-modal img,
 video {
   max-width: 800px;
   max-height: 600px;
@@ -273,13 +289,20 @@ video {
 }
 
 .dropbtn:hover,
-.dropbtn:focus {
-  background-color: #901c1c;
+.dropbtn:focus,
+.dropdown-option:hover,
+.dropdown-option:focus {
+  background-color: #db8876;
 }
 
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+.fa-play {
+  font-size: 10px;
+  margin-left: 10px;
 }
 
 .dropdown-content {
@@ -288,37 +311,37 @@ video {
   background-color: #901c1c;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  top: 0;
 }
-
-/* .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-} */
-
-/* .dropdown-content a:hover {
-  background-color: #ddd;
-} */
 
 .show {
   display: flex;
   flex-direction: column;
+  right: -95px;
 }
 
 .dropdown-option {
   background-color: #901c1c;
-  color: inherit;
+  color: #fff;
   border: none;
-  padding: 0;
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  padding: 3px;
+  padding: 5px;
   font-size: 18px;
 }
+.dropdown-divider {
+  margin: 0.1rem 5px;
+  overflow: hidden;
+  border-top: 1px solid #e9ecef;
+}
 
-.dropdown-menu-right {
-  top: 0;
-  right: 0;
+.submit-button {
+  background-color: #901c1c;
+  color: white;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin: 0;
 }

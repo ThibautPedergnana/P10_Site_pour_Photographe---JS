@@ -35,11 +35,13 @@ class FilterForm {
   render() {
     const filterForm = `
         <form class="filter-form">
-            <div class="dropdown dropdown-menu-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <div onclick="dropDown()" class="dropbtn">Trier par</div>
-              <div id="myDropdown" class="dropdown-content">
+            <div class="dropdown">
+              <button onclick="dropDown()" id="menu" class="dropbtn" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Trier par <i class="fa-solid fa-play"></i></button>
+              <div id="myDropdown" class="dropdown-content" aria-labelledby="menu">
                 <button class="dropdown-option dropdown-likes" type="button" value="likes">Popularité</button>
+                <div class="dropdown-divider"></div>
                 <button class="dropdown-option dropdown-date" type="button" value="date">Date</button>
+                <div class="dropdown-divider"></div>
                 <button class="dropdown-option dropdown-title" type="button" value="title">Titre</button>
               </div>
             </div>
