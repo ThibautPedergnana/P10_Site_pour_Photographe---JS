@@ -12,7 +12,7 @@ class ContactForm {
           <h2 aria-labbelledby="2" class="header-form">Contactez-moi ${this._name}</h2>
           <img alt="Close Contact form" src="assets/icons/close.svg" onclick="closeModal()" />
       </header>
-      <form class="form" name="form" action="photographer.html">
+      <form class="form" name="form" action="photographer.html" method="get">
         <div class="formData firstName-section">
          <label for="firstName">Prénom</label>
           <input class="text-control" type="text" id="firstName" name="firstName" aria-labbelledby="3"/>

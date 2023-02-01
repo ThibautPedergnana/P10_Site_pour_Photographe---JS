@@ -76,9 +76,9 @@ function validMessage(inputMessage) {
 }
 
 // form instructions
-function getForm() {
+function handleForm() {
   let form = document.querySelector(".form");
-
+  console.log(form);
   // Check validation firstname and lastname when changing
   form.firstName.addEventListener("change", function () {
     validFirstName(this);
@@ -99,7 +99,6 @@ function getForm() {
     validMessage(this);
   });
 }
-getForm();
 
 function checkValidationFormAll(email, lastname, firstname, message) {
   return (
@@ -110,7 +109,7 @@ function checkValidationFormAll(email, lastname, firstname, message) {
   );
 }
 
-function submitForm() {
+function handleSubmit() {
   const submitBtn = document.querySelector(".submit-button");
 
   submitBtn.addEventListener("click", (e) => {
@@ -126,18 +125,20 @@ function submitForm() {
     validLastName(lastname);
     validFirstName(firstname);
     validMessage(message);
-
+    console.log("su");
     // Check entire form then submit if valid
     if (checkValidationFormAll(email, lastname, firstname, message)) {
       // Change value of button
-      submitBtn.addEventListener("click", (e) => {
-        console.log("firstname", firstname.value);
-        console.log("lastname", lastname.value);
-        console.log("email", email.value);
-        console.log("message", message.value);
-        closeModal();
-      });
+      console.log("firstname", firstname.value);
+      console.log("lastname", lastname.value);
+      console.log("email", email.value);
+      console.log("message", message.value);
+      closeModal();
     }
   });
 }
-submitForm();
+
+const handleContactForm = () => {
+  handleSubmit();
+  handleForm();
+};

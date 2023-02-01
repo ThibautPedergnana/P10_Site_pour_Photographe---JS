@@ -10,7 +10,6 @@ class PlayerModal {
     });
     this.$wrapper = document.createElement("div");
     this.$wrapper.classList.add("player-wrapper");
-
     this.$modalWrapper = document.querySelector(".player-modal");
   }
 
@@ -24,30 +23,70 @@ class PlayerModal {
       });
   }
 
-  onPrevButton() {
+  goPrev() {
+    if (this.currentIndex === 0) this.currentIndex = this.allMedias.length - 1;
+    else this.currentIndex--;
+    this.media = this.allMedias[this.currentIndex];
+    this.$wrapper.innerHTML = "";
+    this.render();
+  }
+
+  onPrevButton(clearEvent) {
     this.$wrapper
       .querySelector(".prev-btn-player")
       .addEventListener("click", () => {
-        if (this.currentIndex === 0)
-          this.currentIndex = this.allMedias.length - 1;
-        else this.currentIndex--;
-        this.media = this.allMedias[this.currentIndex];
-        this.$wrapper.innerHTML = "";
-        this.render();
+        this.goPrev();
+        clearEvent();
       });
   }
 
-  onNextButton() {
+  goNext() {
+    if (this.currentIndex === this.allMedias.length - 1) this.currentIndex = 0;
+    else this.currentIndex++;
+    this.media = this.allMedias[this.currentIndex];
+    this.$wrapper.innerHTML = "";
+    this.render();
+  }
+
+  onNextButton(clearEvent) {
     this.$wrapper
       .querySelector(".next-btn-player")
       .addEventListener("click", () => {
-        if (this.currentIndex === this.allMedias.length - 1)
-          this.currentIndex = 0;
-        else this.currentIndex++;
-        this.media = this.allMedias[this.currentIndex];
-        this.$wrapper.innerHTML = "";
-        this.render();
+        this.goNext();
+        clearEvent();
       });
+  }
+
+  handleDirectionArrows(event, clearEvent) {
+    if (event.key === "ArrowLeft") {
+      this.goPrev();
+      clearEvent();
+    } else if (event.key === "ArrowRight") {
+      this.goNext();
+      clearEvent();
+    }
+  }
+
+  handlePrevNextMedia() {
+    const that = this;
+
+    function callbackArrow(e) {
+      that.handleDirectionArrows(e, () =>
+        document.removeEventListener("keydown", callbackArrow)
+      );
+    }
+
+    const clearEventArrow = () =>
+      document.removeEventListener("keydown", callbackArrow);
+
+    document.addEventListener("keydown", callbackArrow);
+
+    this.onPrevButton(clearEventArrow);
+    this.onNextButton(clearEventArrow);
+
+    that.$wrapper
+      .querySelector(".close-btn-player")
+      .addEventListener("click", clearEventArrow);
   }
 
   createPlayer() {
@@ -79,8 +118,7 @@ class PlayerModal {
     this.$modalWrapper.appendChild(this.$wrapper);
 
     this.onCloseButton();
-    this.onPrevButton();
-    this.onNextButton();
+    this.handlePrevNextMedia();
   }
 
   render() {

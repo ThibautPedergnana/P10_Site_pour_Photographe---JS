@@ -87,6 +87,7 @@ async function getPhotograph() {
 
   const Contact = new ContactForm(photographe);
   contactModal.appendChild(Contact.createContactForm());
+  handleContactForm();
 
   // Affiche les medias du photographe sélectionné
   PhotographerMedias.forEach((media) => {
