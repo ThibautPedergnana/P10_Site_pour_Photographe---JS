@@ -18,6 +18,53 @@ function getPrice(price) {
   photographerPrice.innerHTML = price + "€ / jour";
 }
 
+function dropDown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    const dropdowns = document.getElementsByClassName("dropdown-content");
+    let i;
+    for (i = 0; i < dropdowns.length; i++) {
+      let openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
+
+const handleTotalLikes = () => {
+  // Gère le total des likes depuis le DOM
+  const likeElems = document.querySelectorAll("[class^='nb-like-']");
+
+  [...likeElems].forEach((likeElem) => {
+    const observer = new MutationObserver((mutationsList, observer) =>
+      calculTotalLike()
+    );
+
+    observer.observe(likeElem, {
+      characterData: false,
+      childList: true,
+      attributes: false,
+    });
+  });
+};
+
+async function renderMedias(filteredMedia) {
+  //Clear current list medias
+  photographerMedia.innerHTML = "";
+  filteredMedia.forEach((media) => {
+    const TemplateArt = PhotographerArtWithPlayer(
+      new PhotographerArt(media),
+      filteredMedia
+    );
+    photographerMedia.appendChild(TemplateArt.createPhotographerArt());
+  });
+  handleTotalLikes();
+}
+
 async function getPhotograph() {
   // Récupère toutes les datas
   const { photographers, media } = await getPhotographers();
@@ -48,21 +95,7 @@ async function getPhotograph() {
 
   calculTotalLike();
   getPrice(photographe.price);
-
-  // Gère le total des likes depuis le DOM
-  const likeElems = document.querySelectorAll("[class^='nb-like-']");
-
-  [...likeElems].forEach((likeElem) => {
-    const observer = new MutationObserver((mutationsList, observer) =>
-      calculTotalLike()
-    );
-
-    observer.observe(likeElem, {
-      characterData: false,
-      childList: true,
-      attributes: false,
-    });
-  });
+  handleTotalLikes();
 }
 
 getPhotograph();

@@ -14,17 +14,18 @@ class FilterForm {
     const filterAdapter = new FilterMediaAdapter(this.media, label);
     const filteredMedia = await filterAdapter.filterMedias();
 
-    filteredMedia.forEach((media) => {
-      const Template = new PhotographerArt(media);
-      this.$mediaSection.appendChild(Template.createPhotographerArt());
-    });
+    renderMedias(filteredMedia);
   }
 
   onChangeFilter() {
-    this.$wrapper.querySelector("form").addEventListener("change", (e) => {
-      const label = e.target.value;
-      this.filterMedia(label);
-    });
+    const buttons = this.$wrapper.querySelectorAll(".dropdown-option");
+
+    buttons.forEach((button) =>
+      button.addEventListener("click", (e) => {
+        const label = e.target.value;
+        this.filterMedia(label);
+      })
+    );
   }
 
   clearMediaWrapper() {
@@ -33,13 +34,15 @@ class FilterForm {
 
   render() {
     const filterForm = `
-        <form class="filter-form" action="#" method="POST">
-            <label for="filter-select">Trier par</label>
-            <select name="filter-select" id="filter-select">
-                <option value="likes">Popularité</option>
-                <option value="date">Date</option>
-                <option value="title">Titre</option>
-            </select>
+        <form class="filter-form">
+            <div class="dropdown dropdown-menu-right" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <div onclick="dropDown()" class="dropbtn">Trier par</div>
+              <div id="myDropdown" class="dropdown-content">
+                <button class="dropdown-option dropdown-likes" type="button" value="likes">Popularité</button>
+                <button class="dropdown-option dropdown-date" type="button" value="date">Date</button>
+                <button class="dropdown-option dropdown-title" type="button" value="title">Titre</button>
+              </div>
+            </div>
         </form>
     `;
     this.$wrapper.innerHTML = filterForm;
