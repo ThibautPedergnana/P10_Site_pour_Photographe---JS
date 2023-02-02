@@ -233,6 +233,10 @@ form input {
   position: relative;
 }
 
+.media-container {
+  cursor: pointer;
+}
+
 .media-container video {
   /* min-width: 338px;
   min-height: 225px; */
@@ -344,4 +348,8 @@ video {
   border: none;
   cursor: pointer;
   margin: 0;
+}
+
+.modal-btn {
+  cursor: pointer;
 }

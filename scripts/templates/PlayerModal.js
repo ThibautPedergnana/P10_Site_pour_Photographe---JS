@@ -92,7 +92,7 @@ class PlayerModal {
   createPlayer() {
     const player = `
         <div class="player" aria-label="image closeup view">
-            <button class="prev-btn-player" aria-label="Previous image"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="modal-btn prev-btn-player" aria-label="Image précédente"><i class="fa-solid fa-chevron-left"></i></button>
             ${
               this.media?._image
                 ? `<img 
@@ -102,9 +102,9 @@ class PlayerModal {
                       <source alt="${this.media._title}" src="/assets/medias/${this.media?._video}">
                    </video>`
             }
-            <button class="next-btn-player" aria-label="Next image"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="modal-btn next-btn-player" aria-label="Image suivante"><i class="fa-solid fa-chevron-right"></i></button>
             <div class="close">
-              <button class="close-btn-player" aria-label="Close modal"><i class="fa-solid fa-xmark"></i></button>
+              <button class="modal-btn close-btn-player" aria-label="Fermer modal"><i class="fa-solid fa-xmark"></i></button>
             </div>
         </div>
         <div class="media-title">
