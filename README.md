@@ -1,4 +1,4 @@
-# Base de code du projet P6 - Parcours Front-end
+# Projet-10---Site pour photographe avec des design pattern | JS #
 
 ## Démarrer le projet
 
